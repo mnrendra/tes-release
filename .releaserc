@@ -38,8 +38,8 @@
       "message": "release: v${nextRelease.version}\n\n${nextRelease.notes}"
     }],
     ["@semantic-release/exec", {
-      "prepareCmd": "npx clean-package && git config --list",
-      "publishCmd": "ls -laihs && echo \"${process.env.GITHUB_REPOSITORY}\" && echo \"v${nextRelease.version}\" && echo \"v${nextRelease.name}\"",
+      "prepareCmd": "npx clean-package",
+      "publishCmd": "ls --laihs && echo \"${process.env.GITHUB_REPOSITORY}\" && echo \"v${nextRelease.version}\" && echo \"v${nextRelease.name}\"",
       "successCmd": "npx clean-package restore"
     }]
   ]
